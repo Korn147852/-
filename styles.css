@@ -34,70 +34,72 @@ body {
     text-decoration: underline;
   }
   
-  /* Navbar Styles */
-  .navbar {
-    background: #333;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .nav-list {
-    list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .nav-list li {
-    margin: 0 10px;
-  }
-  
-  .nav-list a {
-    color: #fff;
-    text-decoration: none;
-  }
-  
-  .nav-list a:hover {
-    text-decoration: underline;
-  }
-  
-  /* Mobile Navbar */
+.navbar {
+  background: #333;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list li {
+  margin: 0 10px;
+}
+
+.nav-list a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav-list a:hover {
+  text-decoration: underline;
+}
+
+/* Mobile Navbar */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle .bar {
+  background: #fff;
+  height: 3px;
+  width: 25px;
+  margin: 3px 0;
+}
+
+@media screen and (max-width: 768px) {
   .menu-toggle {
+    display: flex;
+  }
+
+  .nav-list {
     display: none;
     flex-direction: column;
-    cursor: pointer;
   }
-  
-  .menu-toggle .bar {
-    background: #fff;
-    height: 3px;
-    width: 25px;
-    margin: 3px 0;
+
+  .nav-list.active {
+    display: flex;
+    background: #444;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
   }
-  
-  @media screen and (max-width: 768px) {
-    .menu-toggle {
-      display: flex;
-    }
-  
-    .nav-list {
-      display: none;
-      flex-direction: column;
-    }
-  
-    .nav-list.active {
-      display: flex;
-      background: #444;
-      position: absolute;
-      top: 50px;
-      left: 0;
-      width: 100%;
-    }
-  
-    .nav-list li {
-      text-align: center;
-      margin: 10px 0;
-    }
-  }  
+
+  .nav-list li {
+    text-align: center;
+    margin: 10px 0;
+  }
+}
